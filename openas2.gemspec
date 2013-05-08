@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = Openas2::VERSION
   spec.authors       = ["Scott Tesoriere"]
   spec.email         = ["scott@tesoriere.com"]
-  spec.summary       = %q{Connect to OpenAS2 through ruby}
+  spec.summary       = %q{Modify openas2 configuration}
   spec.description   = %q{OpenAS2 provides a SSL module to remotely manage it}
   spec.homepage      = ""
   spec.license       = "MIT"
