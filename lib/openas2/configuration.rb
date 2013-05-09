@@ -15,6 +15,7 @@ module Openas2
       puts cmd
       @connection.puts(cmd)
       # also parse attributes into hash
+      # Hash[*s.gsub(/{|}|\s/, '').split(",").map{|a|a.split('=')}.flatten]
       "<results>#{@connection.readlines.join}</results>"
     end
 
