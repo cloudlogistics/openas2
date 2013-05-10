@@ -16,7 +16,9 @@ module Openas2
       @connection.puts(cmd)
       # also parse attributes into hash
       # Hash[*s.gsub(/{|}|\s/, '').split(",").map{|a|a.split('=')}.flatten]
-      "<results>#{@connection.readlines.join}</results>"
+      r = "<results>#{@connection.readlines.join}</results>"
+      @connection.close
+      r
     end
 
     def partner(name)
