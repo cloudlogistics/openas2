@@ -8,7 +8,7 @@ module Openas2
       attr_accessor :socket, :ssl_context, :ssl_socket
 
       def initialize(host='localhost', port=4321, ciphers=[])
-        ciphers << ["ADH-RC4-MD5", "TLSv1/SSLv3", 128, 128]
+        ciphers << ["ADH-AES256-SHA", "TLSv1/SSLv3", 256, 256]
         @socket = TCPSocket.new(host, port)
         @ssl_context = OpenSSL::SSL::SSLContext.new
         @ssl_context.ciphers = ciphers
