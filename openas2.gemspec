@@ -6,8 +6,8 @@ require 'openas2/version'
 Gem::Specification.new do |spec|
   spec.name          = "openas2"
   spec.version       = Openas2::VERSION
-  spec.authors       = ["Scott Tesoriere"]
-  spec.email         = ["scott@tesoriere.com"]
+  spec.authors       = ["Scott Tesoriere", "Arpit Jain"]
+  spec.email         = ["scott@tesoriere.com", "arpitjain1094@gmail.com", "arpit.jain@e2open.com"]
   spec.summary       = %q{Modify openas2 configuration}
   spec.description   = %q{OpenAS2 provides a SSL module to remotely manage it}
   spec.homepage      = ""
