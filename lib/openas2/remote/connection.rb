@@ -8,10 +8,17 @@ module Openas2
       attr_accessor :socket, :ssl_context, :ssl_socket
 
       def initialize(host='localhost', port=4321, ciphers=[])
-        ciphers << ["ADH-AES256-SHA", "TLSv1/SSLv3", 256, 256]
         @socket = TCPSocket.new(host, port)
         @ssl_context = OpenSSL::SSL::SSLContext.new
+
+        if OpenSSL::OPENSSL_VERSION.match('1.1')
+          ciphers << ["ADH-AES256-SHA@SECLEVEL=0", "TLSv1/SSLv3", 256, 256]
+        else
+          ciphers << ["ADH-AES256-SHA", "TLSv1/SSLv3", 256, 256]
+        end
+
         @ssl_context.ciphers = ciphers
+        @ssl_context.max_version = OpenSSL::SSL::TLS1_2_VERSION
       end
 
       def connect
